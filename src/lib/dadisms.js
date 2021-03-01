@@ -7,8 +7,8 @@ const dadisms = [
   { id: 5, text: '"Barb"' },
   { id: 6, text: "Putting another log on the fire" },
   { id: 7, text: '"Tegnomi"' },
-  { id: 8, text: '"I"ll be back home in ten minutes, Barb"' },
-  { id: 9, text: '"Lets go the scenic route"' },
+  { id: 8, text: '"I’ll be back home in ten minutes, Barb"' },
+  { id: 9, text: '"Let’s go the scenic route"' },
   { id: 10, text: '"I know a short cut!"' },
   { id: 11, text: '"Were you born in a barn?"' },
   { id: 12, text: '"One of your best yet"' },
@@ -25,6 +25,10 @@ const dadisms = [
   { id: 23, text: "Reading a book at your graduation" },
   { id: 24, text: '"Oh my coffee has gotten cold"' },
   { id: 25, text: '"Has Bobby been walked yet?"' },
+  { id: 26, text: '"Diamonds are forever"' },
+  { id: 27, text: '"We’re on the road to nowhere"' },
+  { id: 28, text: "Playing a tune on the recorder" },
+  { id: 29, text: "Showing off his pottery collection"}
 ];
 
 export default dadisms;
