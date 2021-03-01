@@ -1,7 +1,7 @@
 import React from "react";
 import BaseLayout from "../../../layouts/BaseLayout";
 
-const Welcome = ({setShowWelcome}) => (
+const Welcome = ({ setShowWelcome }) => (
   <BaseLayout bg="transparent">
     <h1
       style={{
@@ -10,8 +10,7 @@ const Welcome = ({setShowWelcome}) => (
         visibility: "visible",
         opacity: 1,
         transition: "visibility 0s 2s, opacity 2s linear",
-        cursor: "pointer"
-
+        cursor: "pointer",
       }}
       onClick={() => setShowWelcome(false)}
     >

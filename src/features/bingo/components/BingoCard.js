@@ -9,19 +9,20 @@ const Grid = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   border-radius: 40px;
-  padding-bottom: 24px;
+  padding-bottom: 18px;
 `;
 
 const Button = styled.button`
   background-color: transparent;
-  border: none;
+  border: 1px solid #f70;
+  border-radius: 6px;
   color: white;
-  padding: 15px 32px;
+  padding: 8px 18px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px;
-  margin: 4px 2px;
+  font-size: 20px;
+  margin: 8px 2px;
   cursor: pointer;
 `;
 
@@ -31,21 +32,6 @@ const shuffle = (array) => {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
-};
-
-const winningLines = (cards) => {
-  if (
-    (cards[0].called && cards[1].called && cards[2].called) ||
-    (cards[3].called && cards[4].called && cards[5].called) ||
-    (cards[6].called && cards[7].called && cards[8].called) ||
-    (cards[0].called && cards[3].called && cards[6].called) ||
-    (cards[1].called && cards[4].called && cards[7].called) ||
-    (cards[2].called && cards[5].called && cards[8].called) ||
-    (cards[0].called && cards[4].called && cards[8].called) ||
-    (cards[2].called && cards[4].called && cards[6].called)
-  ) {
-    setTimeout(() => alert("DAD BINGO!"), 400);
-  }
 };
 
 const BingoCard = () => {
@@ -61,6 +47,29 @@ const BingoCard = () => {
     return formattedCards;
   };
   const [cardsToPlay, setCardsToPlay] = useState(generateCards());
+  const [hasWonLine, setHasWonLine] = useState(false);
+
+  const winningLines = (cards) => {
+    const isCalled = (currentValue) => !!currentValue.called;
+    if (cards.every(isCalled)) {
+      setTimeout(() => alert("FULL DAD BINGO HOUSE!"), 300);
+      return;
+    }
+    if (hasWonLine) return;
+    if (
+      (cards[0].called && cards[1].called && cards[2].called) ||
+      (cards[3].called && cards[4].called && cards[5].called) ||
+      (cards[6].called && cards[7].called && cards[8].called) ||
+      (cards[0].called && cards[3].called && cards[6].called) ||
+      (cards[1].called && cards[4].called && cards[7].called) ||
+      (cards[2].called && cards[5].called && cards[8].called) ||
+      (cards[0].called && cards[4].called && cards[8].called) ||
+      (cards[2].called && cards[4].called && cards[6].called)
+    ) {
+      setHasWonLine(true);
+      setTimeout(() => alert("DAD BINGO!"), 400);
+    }
+  };
 
   const updateCard = (id) => {
     setCardsToPlay(
@@ -73,7 +82,7 @@ const BingoCard = () => {
   };
 
   return (
-    <BaseLayout bg={"#f70"}>
+    <BaseLayout bg={"#f70"} >
       <h1 style={{ textAlign: "center", fontFamily: "Montserrat" }}>
         DAD BINGO
       </h1>
@@ -81,10 +90,7 @@ const BingoCard = () => {
         {cardsToPlay.slice(0, 9).map((card) => (
           <Cell
             key={card.id}
-            text={card.text}
-            index={card.id}
-            id={card.id}
-            called={card.called}
+            {...card}
             updateCard={() => updateCard(card.id)}
           />
         ))}

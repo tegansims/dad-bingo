@@ -19,25 +19,23 @@ const BaseCell = styled.div`
   )`};
   transition: clip-path 1.2s linear;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CellText = styled.p`
   text-align: center;
   transition: opacity 1.2s;
   opacity: ${({ called }) => (called ? "0.3" : "1")};
-  /* margin: 2px 6px 2px 6px; */
   margin: 6px;
+  font-family: "Montserrat";
 `;
 
 const Cell = ({ text, updateCard, called }) => {
   return (
     <BaseCell onClick={updateCard} called={called}>
-      <CellText
-        called={called}
-        style={{ textAlign: "center", fontFamily: "Montserrat" }}
-      >
-        {text}
-      </CellText>
+      <CellText called={called}>{text}</CellText>
     </BaseCell>
   );
 };

@@ -7,7 +7,7 @@ const BaseLayout = ({ bg = "red", children, ...props }) => (
       justifyContent: "center",
       alignItems: "center",
       height: "100vh",
-      backgroundColor: "#3D4E57",
+      backgroundColor: "#3D4E57"
     }}
   >
     <div
