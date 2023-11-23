@@ -13,7 +13,7 @@ const dadisms = [
   { id: 11, text: '"Were you born in a barn?"' },
   { id: 12, text: '"One of your best yet"' },
   { id: 13, text: 'Calling dogs "he" and cats "she"' },
-  { id: 14, text: '"Better..!"' },
+  { id: 14, text: '"Better...!"' },
   { id: 15, text: '"London is 2 degrees warmer"' },
   { id: 16, text: '"Shingles!"' },
   { id: 17, text: "Coughs" },
@@ -26,9 +26,10 @@ const dadisms = [
   { id: 24, text: '"Oh my coffee has gotten cold"' },
   { id: 25, text: '"Has Bobby been walked yet?"' },
   { id: 26, text: '"Diamonds are forever"' },
-  { id: 27, text: '"We’re on the road to nowhere"' },
+  { id: 27, text: '🎵 "We’re on the road to nowhere" 🎵' },
   { id: 28, text: "Playing a tune on the recorder" },
-  { id: 29, text: "Showing off his pottery collection"}
+  { id: 29, text: "Showing off his pottery collection" },
+  { id: 30, text: '"This bed is awful"' },
 ];
 
 export default dadisms;

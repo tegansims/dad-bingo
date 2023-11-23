@@ -22,7 +22,7 @@ const Button = styled.button`
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin: 8px 2px;
+  margin: 24px 2px 8px 2px;
   cursor: pointer;
 `;
 
@@ -82,7 +82,7 @@ const BingoCard = () => {
   };
 
   return (
-    <BaseLayout bg={"#f70"} >
+    <BaseLayout bg={"#f70"}>
       <h1 style={{ textAlign: "center", fontFamily: "Montserrat" }}>
         DAD BINGO
       </h1>
